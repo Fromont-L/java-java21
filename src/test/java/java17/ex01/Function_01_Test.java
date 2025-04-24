@@ -48,7 +48,12 @@ public class Function_01_Test {
     // TODO Compléter la définition de cette fonction
     // TODO la propriété owner est valorisé avec la personne en paramètre
     // TODO la propriété balance est valorisé à 1000
-    private Function<Person, Account> personToAccount = pta -> new Account(pta, 1000);
+    private Function<Person, Account> personToAccount = person -> {
+        Account account = new Account();
+        account.setOwner(person);
+        account.setBalance(1000);
+        return account;
+    };
     // end::personToAccount[]
 
     @Test
